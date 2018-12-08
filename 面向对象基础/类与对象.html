@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+/*类、对象
+类：模子            Array
+对象：产品（成品）    arr
+*/
+//解决函数重复问题
+function creatPerson(name,qq) {  //构造函数
+
+//在函数调用前加了new之后，系统偷偷地做一些事情：
+//var this = new Object();
+
+this.name = name;
+this.qq = qq;
+
+//也会偷偷做一些
+//return this;     //返回构建的对象
+}
+var obj = CreatPerson("张三","95499999999");
+alert(obj); //undefined -> creatPerson没有返回值 this指向window
+
+//原型
+CreatPerson.prototype.showName = function () {
+	alert(this.name);
+};
+CreatPerson.prototype.showQQ = function () {
+	alert(this.qq);
+};
+
+//要加new,不然无法调用构造函数
+var object1 = new CreatPerson("张三","95499999999");
+object1.showName();
+object1.showQQ();
+var object2 = new CreatPerson("李四","46186465849");
+object2.showName();
+object2.showQQ();
+
+alert(object1.showName() == object2.showName()); //true,因为它们都是原型上的
+
+/*
+用构造函数来加属性   行间样式
+用原型来加方法    class
+以上即是混合模式。
+*/
+	
+</script>
+</body>
+</html>

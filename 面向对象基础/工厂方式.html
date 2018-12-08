@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+	/*
+	工厂方式的缺点：
+	1.没有new
+	2.函数重复->资源浪费
+	*/	
+	function creatPerson(name,qq) {  //构造函数
+
+	//原料（新空白对象)
+	var obj = new Object();
+
+	//加工
+	obj.name = name;
+	obj.qq = qq;
+
+	obj.showName = function () {
+		alert(this.name);
+	};
+	obj.showQQ = function () {
+		alert(this.qq);
+	};
+
+	//出厂
+	return obj;     //返回构建的对象
+}
+
+var object = creatPerson("张三","95499999999");
+var object2 = creatPerson("李四","46186465849");
+object.showName();
+object.showQQ();
+
+object2.showName();
+object2.showQQ();
+
+
+
+</script>
+</body>
+</html>

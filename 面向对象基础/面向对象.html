@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>面向对象</title>
+</head>
+<body>
+<script type="text/javascript">
+	function creatPerson(name,qq) {  //构造函数
+		var obj = new Object();
+
+		obj.name = name;
+		obj.qq = qq;
+
+		obj.showName = function () {
+			alert(this.name);
+		}
+
+		obj.showQQ = function () {
+			alert(this.qq);
+		}
+		return obj;     //返回构建的对象
+	}
+
+
+	var object = creatPerson("张三",95499999999);   //object拥有obj的方法和属性
+	object.showName();
+	object.showQQ();
+	
+</script>
+</body>
+</html>

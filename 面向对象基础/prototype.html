@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>原型</title>
+</head>
+<body>
+<script type="text/javascript">
+/*
+css 									js
+class	一次给一组元素加样式	 	 	   原型
+行间样式		一次给一个元素家样式		   给对象加事件
+*/
+var arr1 = new Array(1,5,8,6,7);
+var arr2 = new Array(11,25,58,16,17);
+
+Array.prototype.sum = function () {  //class
+//arr1.sum = function () {    //行间样式
+	var result = 0;
+
+	for (let i = 0; i < this.length; i++) {
+		result+=this[i];
+	}
+	return result;
+} 
+
+alert(arr1.sum());
+alert(arr2.sum());
+
+
+</script>
+</body>
+</html>
