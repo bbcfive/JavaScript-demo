@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		//创建cookie
+		function setCookie(name,value,expiresDay) {
+			var oDay = new Date();
+			oDay.setDate(oDay.getDate() + expiresDay);
+
+			document.cookie = name + ' = ' + value + '; expires = ' + expiresDay;
+		}
+
+		//得到cookie
+		function getCookie(name) {
+			var arr = document.cookie.split('; '); //cookie间是用;+空格隔开的
+			for (let i = 0; i < arr.length; i++) {
+				var arr2 = arr[i].split('=');
+				if (arr2[0] == name) {
+					return arr2[1];
+				}
+			}
+			return '';
+		}
+
+		//删除cookie
+		function removeCookie(name) {
+			setCookie(name,1,-1); //-1天后过期，则浏览器立马删除
+		}	
+		
+		window.onload = function() {
+			var oForm = document.getElementById('form1');
+			var oUser = document.getElementsByName('user')[0];
+
+			oForm.onsubmit = function() {
+				setCookie('user', oUser.value, 14);
+			}
+
+			oUser.value = getCookie('user');
+		}			
+	</script>
+</head>
+<body>
+<form id="form1" action="http://www.baidu.com/">
+	用户名:<input type="text" name="user"> <br>
+	密码:<input type="password" name="password"> <br>
+	<input type="submit" value="登录">
+</form>
+</body>
+</html>

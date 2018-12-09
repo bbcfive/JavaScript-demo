@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	/*
+	1.什么是cookie？
+	页面用来保存信息，如：自动登录、记住用户名
+	2.cookie的特性
+	同一个网站中所有页面共享一套cookie
+	数量、大小有限
+	有过期时间
+	3.js中使用cookie
+	document.cookie
+	4.cookie的使用
+	
+	设置cookie：
+		格式：名字=值
+		不会覆盖
+		过期时间：expires = 时间
+			日期对象的使用
+		封装函数
+	
+	读取cookie
+		字符串的分割
+
+	删除cookie
+		已经过期
+	*/
+
+	//创建cookie
+	function setCookie(name,value,expiresDay) {
+		var oDay = new Date();
+		oDay.setDate(oDay.getDate() + expiresDay);
+
+		document.cookie = name + ' = ' + value + '; expires = ' + expiresDay;
+	}
+
+	//得到cookie
+	function getCookie(name) {
+		var arr = document.cookie.split('; '); //cookie间是用;+空格隔开的
+		for (let i = 0; i < arr.length; i++) {
+			var arr2 = arr[i].split('=');
+			if (arr2[0] == name) {
+				return arr2[1];
+			}
+		}
+		return '';
+	}
+
+	//删除cookie
+	function removeCookie(name) {
+		setCookie(name,1,-1); //-1天后过期，则浏览器立马删除
+	}
+
+	setCookie('userName','blue',100);
+</script>
+</body>
+</html>
