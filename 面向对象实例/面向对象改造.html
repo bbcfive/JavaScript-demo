@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#div1 input{background: white;}
+		#div1 input.active {background: yellow;}
+		#div1 div {width: 200px;height: 200px; background: #ccc;display: none;}
+	</style>
+</head>
+<body>
+	<div id="div1">
+		<input class="active" type="button" value="aaa" >
+		<input type="button" value="bbb">
+		<input type="button" value="ccc">
+		<div style="display: block;">aaa</div>
+		<div>bbb</div>
+		<div>ccc</div>		
+	</div>
+
+<script type="text/javascript">
+	/*
+	把一个面向过程的程序，改成面向对象的形式
+
+	原则
+		不能有嵌套函数，但能有全局变量
+	过程
+		onload -> 构造函数
+		全局变量 -> 属性
+		函数 -> 方法
+	改错
+		this，事件，闭包，传参	
+	对象与闭包
+		通过闭包传递this -> 51行
+	*/
+
+	window.onload = function () {
+		new TabSwitch('div1');
+	};
+
+	function TabSwitch(id) {
+		var _this = this;
+		var oDiv = document.getElementById(id);
+		this.aBtn = oDiv.getElementsByTagName('input');
+		aDiv = oDiv.getElementsByTagName('div');
+
+		for (var i = 0; i < this.aBtn.length; i++) {
+			this.aBtn[i].index = i;
+			//this.aBtn[i].onclick=this.fnClick; //fnclick不再是函数，而是方法
+			this.aBtn[i].onclick = function () {
+				_this.fnClick(this); //两个this的区别 
+			};
+		}
+	}
+
+	TabSwitch.prototype.fnClick = function(oBtn) {
+	 	//alert(this); this->aBtn,49行，fnclick被赋值给了aBtn.onclik
+	 	//如果想要this指新new来的对象，则使用50行代码
+		for (var i = 0; i <this.aBtn.length;i++) {
+			this.aBtn[i].className='';
+			aDiv[i].style.display='none';
+		}
+		oBtn.className = 'active';
+		aDiv[oBtn.index].style.display='block';	
+	};	
+</script>
+</body>
+</html>
