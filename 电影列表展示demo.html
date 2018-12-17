@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="./../jquery-1.12.4.min.js"></script>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.film{
+			width: 270px;
+			height: 350px;
+			border: black solid .5px;
+			margin: 50px auto;
+		}
+		p{
+			background-color: rgba(241,165,142,0.7);
+			line-height: 30px;
+			padding: 0 10px;
+		}
+		ul{
+			list-style:none;
+
+		}
+		li{
+			padding: 5px 10px;
+			border-bottom: .5px black solid; 
+		}
+		li:first-child{
+			border-top: .5px black solid;
+		}
+		ul>li>span{
+			margin-right: 10px;
+			padding: 0 5px;
+			background-color: grey;
+		}
+		ul>li:nth-child(-n+3) span{
+			background-color: pink;
+		}
+		.content{
+			margin-top: 5px;
+			overflow: hidden;
+			width: 270px;
+			height: 100px;
+			line-height: 20px;
+			display: none;
+		}
+		.current>.content{
+			display: block;
+		}
+		img{
+			float: left;
+			width: 70px;
+			height: 100px;
+		}
+		.profile{
+			float: right;
+			font-size: 14px;
+			width: 180px;
+			height: 100px;
+			margin-right: 10px;
+		}
+	</style>
+</head>
+<body>
+<div class="film">
+	<p>电影展示</p>
+	<ul>
+		<li><span>1</span>电影名称
+			<div class="content">
+				<img src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=1075481921,1149912994&fm=58&w=121&h=140&img.JPEG">
+				<div class="profile">
+					《战狼Ⅱ》是吴京执导的动作军事电影，由吴京、弗兰克·格里罗、吴刚、张翰、卢靖姗、淳于珊珊、丁海峰等主演。该片于2017年7月27日在中国内地上映 。该片讲述了脱下军装的冷锋被卷入了一场非洲国家的叛乱，本来能够安全撤离的他无法忘记军人的职责，重回战场展开救援的故事。2017年12月，该片获得2017中国-东盟电影节最佳影片奖，在第二届澳门国际影展上获得亚洲人气电影大奖 。2018年11月10日，吴...
+				</div>				
+			</div>
+		</li>
+		<li><span>2</span>电影名称
+			<div class="content">
+				<img src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=1075481921,1149912994&fm=58&w=121&h=140&img.JPEG">
+				<div class="profile">
+					《战狼Ⅱ》是吴京执导的动作军事电影，由吴京、弗兰克·格里罗、吴刚、张翰、卢靖姗、淳于珊珊、丁海峰等主演。该片于2017年7月27日在中国内地上映 。该片讲述了脱下军装的冷锋被卷入了一场非洲国家的叛乱，本来能够安全撤离的他无法忘记军人的职责，重回战场展开救援的故事。2017年12月，该片获得2017中国-东盟电影节最佳影片奖，在第二届澳门国际影展上获得亚洲人气电影大奖 。2018年11月10日，吴...
+				</div>				
+			</div>
+		</li>
+		<li><span>3</span>电影名称
+			<div class="content">
+				<img src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=1075481921,1149912994&fm=58&w=121&h=140&img.JPEG">
+				<div class="profile">
+					《战狼Ⅱ》是吴京执导的动作军事电影，由吴京、弗兰克·格里罗、吴刚、张翰、卢靖姗、淳于珊珊、丁海峰等主演。该片于2017年7月27日在中国内地上映 。该片讲述了脱下军装的冷锋被卷入了一场非洲国家的叛乱，本来能够安全撤离的他无法忘记军人的职责，重回战场展开救援的故事。2017年12月，该片获得2017中国-东盟电影节最佳影片奖，在第二届澳门国际影展上获得亚洲人气电影大奖 。2018年11月10日，吴...
+				</div>				
+			</div>
+		</li>
+		<li><span>4</span>电影名称
+			<div class="content">
+				<img src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=1075481921,1149912994&fm=58&w=121&h=140&img.JPEG">
+				<div class="profile">
+					《战狼Ⅱ》是吴京执导的动作军事电影，由吴京、弗兰克·格里罗、吴刚、张翰、卢靖姗、淳于珊珊、丁海峰等主演。该片于2017年7月27日在中国内地上映 。该片讲述了脱下军装的冷锋被卷入了一场非洲国家的叛乱，本来能够安全撤离的他无法忘记军人的职责，重回战场展开救援的故事。2017年12月，该片获得2017中国-东盟电影节最佳影片奖，在第二届澳门国际影展上获得亚洲人气电影大奖 。2018年11月10日，吴...
+				</div>				
+			</div>
+		</li>
+		<li><span>5</span>电影名称
+			<div class="content">
+				<img src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=1075481921,1149912994&fm=58&w=121&h=140&img.JPEG">
+				<div class="profile">
+					《战狼Ⅱ》是吴京执导的动作军事电影，由吴京、弗兰克·格里罗、吴刚、张翰、卢靖姗、淳于珊珊、丁海峰等主演。该片于2017年7月27日在中国内地上映 。该片讲述了脱下军装的冷锋被卷入了一场非洲国家的叛乱，本来能够安全撤离的他无法忘记军人的职责，重回战场展开救援的故事。2017年12月，该片获得2017中国-东盟电影节最佳影片奖，在第二届澳门国际影展上获得亚洲人气电影大奖 。2018年11月10日，吴...
+				</div>				
+			</div>
+		</li>
+		<li><span>6</span>电影名称
+			<div class="content">
+				<img src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=1075481921,1149912994&fm=58&w=121&h=140&img.JPEG">
+				<div class="profile">
+					《战狼Ⅱ》是吴京执导的动作军事电影，由吴京、弗兰克·格里罗、吴刚、张翰、卢靖姗、淳于珊珊、丁海峰等主演。该片于2017年7月27日在中国内地上映 。该片讲述了脱下军装的冷锋被卷入了一场非洲国家的叛乱，本来能够安全撤离的他无法忘记军人的职责，重回战场展开救援的故事。2017年12月，该片获得2017中国-东盟电影节最佳影片奖，在第二届澳门国际影展上获得亚洲人气电影大奖 。2018年11月10日，吴...
+				</div>				
+			</div>
+		</li>
+	</ul>
+</div>
+<script type="text/javascript">
+	$("li").mouseenter(function () {
+		$(this).addClass("current");
+	});
+	$("li").mouseleave(function () {
+		$(this).removeClass("current");
+	});
+</script>
+</body>
+</html>
