@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>lumi选项卡</title>
+	<script src="./../jquery-1.12.4.min.js"></script>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+			font-family: sans-serif;
+		}
+		.name{
+			width: 520px;
+			height: 30px;
+			margin: 80px auto;
+			margin-bottom: 0;
+		}
+		.name>ul>li{
+			float: left;
+			list-style: none;
+			width: 130px;
+			text-align: center;
+			line-height: 30px;
+		}
+		.image{
+			width:520px;
+			height: 324px;
+			margin:0 auto;
+		}
+		.image>ul>li{
+			list-style: none;
+		}
+		.show img{
+			display: block;
+		}
+		img{
+			display: none;
+		}
+		.content>.current{
+			background-color: red;
+			color:#fff;
+		}
+	</style>
+</head>
+<body>
+	<div class="name">
+		<ul class="content">
+			<li class="current">Lumi</li>
+			<li>Music</li>
+			<li>Poetry</li>
+			<li>Xu</li>
+		</ul>
+	</div>
+	<div class="image">
+		<ul >
+			<li class="show"><img src="1.jpeg"></li>
+			<li><img src="2.jpg"></li>
+			<li><img src="3.jpg"></li>
+			<li><img src="4.jpg"></li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		$(".content>li").mouseenter(function() {
+			$(this).addClass("current");
+			$(this).siblings().removeClass("current");
+			let index = $(this).index();
+			let $img = $(".image>ul>li").eq(index);
+			$img.addClass("show");
+			$img.siblings().removeClass("show");
+		});
+	</script>
+</body>
+</html>
