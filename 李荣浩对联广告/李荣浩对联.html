@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="./../jquery-1.12.4.min.js"></script>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.left{
+			float: left;
+			position: fixed;
+			top: 200px;
+			left: 0;
+		}
+		.right{
+			float: right;
+			position: fixed;
+			top: 200px;
+			right: 0;
+		}
+		img{
+			display: none;
+		}
+	</style>
+</head>
+
+<body>
+<img src="1.jpg" class="left">
+<img src="2.jpeg" class="right">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<script type="text/javascript">
+	//读取全页面元素
+	$(function() {
+		$(window).scroll(function() {
+			//此处用$("html,body")，可以减少图片动画的卡顿
+			var topSet = $("html,body").scrollTop();
+			if (topSet > 200) {
+				$("img").show(500);
+			} else {
+				$("img").hide(500);
+			}
+		});	
+	});
+</script>
+</body>
+</html>

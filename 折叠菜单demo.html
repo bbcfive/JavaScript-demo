@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="jquery-1.12.4.min.js"></script>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.wrapper{
+			width: 300px;
+			margin: 50px auto;
+		}
+		.first>li{
+			line-height: 30px;
+			text-indent: 2em;
+			list-style: none;
+			border: 1px black solid;
+			border-bottom: none;
+			position: relative;
+		}
+		.first>li:last-child{
+			border-bottom: 1px black solid;
+			border-bottom-left-radius: 10px;
+			border-bottom-right-radius: 10px;
+		}
+		.first>li:first-child{
+			border-top-left-radius: 10px;
+			border-top-right-radius: 10px;
+		}
+		.first>li>span {
+			background: url("arrow.jpg");
+			display: inline-block;
+			width: 20px;
+			height: 22px;
+			position: absolute;
+			right: 20px;
+			top: 5px;
+		}
+		/*display: none;单独放出来，不要跟li放一起*/
+		.second{
+			display: none;				
+		}
+		.second>li{
+			width: 300px;
+			height: 30px;
+			list-style: none;
+			background-color: grey;
+			color: #fff;
+			border-bottom: .5px #fff solid;		
+		}
+		.second>li:hover{
+			background-color: red;
+		}
+		.current>span{
+			transform: rotate(90deg);
+		}
+	</style>
+</head>
+<body>
+
+<div class="wrapper">
+	<ul class="first">
+		<li>一级菜单<span></span>
+			<ul class="second">
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+			</ul>
+		</li>
+		<li>一级菜单<span></span>
+			<ul class="second">
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+			</ul>
+		</li>
+		<li>一级菜单<span></span>
+			<ul class="second">
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+			</ul>
+		</li>
+		<li>一级菜单<span></span>
+			<ul class="second">
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+			</ul>
+		</li>
+		<li>一级菜单<span></span>
+			<ul class="second">
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+			</ul>
+		</li>
+		<li>一级菜单<span></span>
+			<ul class="second">
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+			</ul>
+		</li>
+		<li>一级菜单<span></span>
+			<ul class="second">
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+			</ul>
+		</li>
+		<li>一级菜单<span></span>
+			<ul class="second">
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+			</ul>
+		</li>
+	</ul>	
+</div>
+
+<script type="text/javascript">
+	$(function () {
+		//所有动画前都加$.stop();函数，效果最好
+		$(".first>li").click(function () {
+			var $sec = $(this).children(".second");
+			$sec.stop();
+			$sec.slideDown(500);
+			$(this).addClass("current");
+		});
+		$(".first>li").mouseleave(function () {
+			var $sec = $(this).children(".second");
+			$sec.stop();
+			$sec.slideUp(500);
+			$(this).removeClass("current");
+		});
+	});
+</script>
+</body>
+</html>
