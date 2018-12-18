@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="./../jquery-1.12.4.min.js"></script>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.car{
+			width: 600px;
+			height: 157px;
+			margin: 100px auto;
+			background-color: #000;
+			overflow: hidden;
+		}
+		ul{
+			width: 1800px;
+			height: 157px;
+		}
+		ul>li{
+			list-style: none;
+			float: left;
+			width: 300px;
+			height: 157px;
+		}
+	</style>
+</head>
+<body>
+<div class="car">
+	<ul>
+		<li><img src="1.jpg"></li>
+		<li><img src="2.jpg"></li>
+		<li><img src="3.jpeg"></li>
+		<li><img src="4.jpg"></li>
+		<li><img src="1.jpg"></li>
+		<li><img src="2.jpg"></li>
+	</ul>
+</div>
+<script type="text/javascript">
+	$(function () {
+		var offset = 0;
+		var timer;
+		function autoPlay () {
+			timer = setInterval(function () {
+				offset += -10;
+				if (offset < -1200 ) {
+					offset = 0;
+				}
+				$("ul").css("marginLeft",offset);
+			} , 50);
+		}
+
+		autoPlay();
+
+		$("li").hover(function () {
+			clearInterval(timer);
+			$(this).siblings().fadeTo(100,0.5);
+			$(this).fadeTo(100,1);
+		}, function () {
+			autoPlay();
+		});
+		$("ul").mouseleave(function() {
+			$("li").fadeTo(100,1);			
+		});
+	});
+</script>
+</body>
+</html>
