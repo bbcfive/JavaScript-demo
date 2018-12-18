@@ -1,0 +1,101 @@
+body{
+	padding: 0;
+	margin: 0;
+	background: url("bg.jpg") no-repeat;
+	overflow: hidden;
+}
+header>img{
+	width: 100%;
+	height: 50px;
+}
+.content{
+	width: 1000px;
+	height: 600px;
+	margin: 0 auto;
+}
+.left{
+	width: 150px;
+	float: left;
+}
+.right{
+	width: 230px;
+	float: right;
+}
+.sendmessage{
+	width: 600px;
+	height: 165px;
+	float: left;
+	margin-left: 10px;	
+	background: url("sendcontent.jpg");
+	position: relative;	
+}
+textarea{
+	width: 575px;
+	height: 76px;
+	position: absolute;
+	top: 36px;
+	left: 10px;
+	resize: none;
+	outline: none;
+}
+textarea:focus{
+	border-color: #fa7d3c;
+}
+.sendmessage>input{
+	width: 80px;
+	height: 30px;
+	display: inline-block;
+	border: none;
+	outline: none;
+	background-color: #fa7d3c;
+	position: absolute;
+	top: 123px;
+	right: 11px;
+	border-radius: 2px;
+	color: #fff;
+	cursor: pointer;
+}
+.messageList{
+	width: 600px;
+	float: left;
+	height: 600px;
+	overflow: auto;
+  	zoom: 1;
+  	
+}
+.messageList::-webkit-scrollbar {
+        display: none;
+    }
+.messageList>.info{
+	width: 600px;
+	height: 100px;
+	float: left;
+	margin-left: 10px;
+	margin-top: 10px;
+	background-color: #fff;
+	border-radius: 2px;
+	box-shadow: 1px 2px 2px #888888;
+}
+.info>.infoText{
+	padding: 5px 20px;
+}
+.info>.infoOperation{
+	padding: 5px 20px;
+}
+.infoOperation>.infoTime{
+	float: left;
+	color: #888888;
+}
+.infoOperation>.infoHandle{
+	float: right;
+	
+}
+.infoOperation>.infoHandle>a >img{
+	margin-bottom: -4px;
+}
+.infoOperation>.infoHandle> a{
+	text-decoration: none;
+	color: #888888;
+	margin: 0 3px;
+}
+

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="./../jquery-1.12.4.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="新浪微博demo.css">
+</head>
+<body>
+	<header>
+		<img src="topbar.jpg">
+	</header>
+	<div class="content">
+		<img class="left" src="leftbar.jpg"></img>
+		<div class="sendmessage">
+			<textarea class="comment"></textarea>
+			<input type="button" value="发布" class="btn" disabled>
+		</div>
+		<img class="right" src="rightbar.jpg"></img>
+		<div class="messageList"></div>
+	</div>
+	<script type="text/javascript">
+		$(function () {
+			//当输入文字并且发布时
+			$(".btn").click(function() {
+				//获得文字内容
+				var text = $(".comment").val();
+				//生成新的节点
+				var $news = creatEle(text);
+				//添加新节点
+				$(".messageList").prepend($news);
+				
+			});
+
+			//创建实时时间
+			function getTime() {
+				var today = new Date();
+				var time = [today.getFullYear(),
+							"-",
+							today.getMonth()+1,
+							"-",
+							today.getDate(),
+							" ",
+							today.getHours(),
+							":",
+							today.getMinutes(),
+							":",
+							today.getSeconds()]
+				return time.join('');
+			}
+
+			//创建新节点
+			function creatEle(text){		
+				var message = $("			<div class=\"info\"> \n" + 
+				" <p class=\"infoText\">"+ text +"</p>\n " +
+				" <p class=\"infoOperation\">\n " +
+				"	<span class=\"infoTime\">"+ getTime() +"</span>\n " +
+				"	<span class=\"infoHandle\">\n " +
+				"		<a href=\"javascript:\" class=\"infoUp\"><img src=\"thumbup.jpg\"><span>0</span></a>\n " +
+				"		<a href=\"javascript:\" class=\"infoDown\"><img src=\"thumbdown.jpg\"><span>0</span></a>\n " + 
+				"		<a href=\"javascript:\" class=\"delete\"><img src=\"trash.jpg\"><span>删除</span></a>\n " +
+				"	</span>\n " + 
+				"</p>\n" + 
+			" </div>");
+				return message;
+			}
+
+			//监听点赞
+			$("body").delegate(".infoUp","click",function () {
+				$(this).children("span").text(parseInt($(this).children("span").text())+1);
+			});
+			//监听踩赞
+			$("body").delegate(".infoDown","click",function () {
+				$(this).children("span").text(parseInt($(this).children("span").text())+1);
+			});
+			//监听删除
+			$("body").delegate(".delete","click",function () {
+				$(this).parents(".info").remove();
+			});
+
+
+			$("body").delegate(".comment","propertychange input",function() {
+				if($(this).val().length > 0) {
+					$(".btn").prop("disabled",false);
+				} else {
+					$(".btn").prop("disabled",true);
+				}
+			});
+
+		});
+	</script>
+</body>
+</html>
