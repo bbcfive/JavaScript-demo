@@ -1,0 +1,94 @@
+.main{
+	width: 320px;
+	height: 480px;
+	background: url("./images/game_bg.jpg") no-repeat 0 0;
+	margin: 50px auto;
+	position: relative;
+}
+.score{
+	margin-left: 60px;
+	color: #fff;
+}
+.progress{
+	width: 180px;
+	height: 16px;
+	background: url("./images/progress.png") no-repeat 0 0;
+	position: absolute;
+	top: 66px;
+	left: 63px;
+}
+.start{
+	width: 150px;
+	line-height: 35px;
+	background: linear-gradient(#E55C3D,#C50000);
+	font-size: 20px;
+	border-radius: 20px;
+	text-align: center;
+	color: #fff;
+	position: absolute;
+	top: 320px;
+	left: 50%;
+	margin-left: -75px;
+	outline: none;
+	border: none;
+}
+.rules{
+	width: 320px;
+	height: 20px;
+	background: grey;
+	color: #fff;
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	text-align: center;
+}
+.rule{
+	width: 320px;
+	height: 480px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.5);
+	color: #fff;
+	text-align: center;
+	padding-top: 100px;
+	box-sizing: border-box;
+	line-height: 30px;
+	display: none;
+}
+.rule>a{
+	color: red;
+}
+.over{
+	width: 320px;
+	height: 480px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.5);
+	color: #fff;
+	text-align: center;
+	padding-top: 150px;
+	box-sizing: border-box;
+	display: none;
+}
+.over>h1{
+	color: #ff4500;
+	font-size: 40px;
+	text-shadow: 3px 3px 0 #fff;
+}
+.restart{
+	width: 150px;
+	line-height: 35px;
+	background: linear-gradient(#74ACCF,#007DDC);
+	font-size: 20px;
+	border-radius: 20px;
+	text-align: center;
+	color: #fff;
+	position: absolute;
+	top: 320px;
+	left: 50%;
+	margin-left: -75px;
+	outline: none;
+	border: none;
+}
